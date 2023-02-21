@@ -1,9 +1,9 @@
 import { Button, List } from "antd";
-import { useDispatch } from "react-redux";
+import { useComponentDispatch } from "../../tests/redux-hooks";
 import todoList from "../../redux/todo";
 
 export default function ToDoList({ list, display }) {
-  const dispatch = useDispatch();
+  const dispatch = useComponentDispatch();
   return (
     <div>
       <List

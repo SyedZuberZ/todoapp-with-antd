@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {
+  useComponentDispatch,
+  useComponentSelector,
+} from "../../tests/redux-hooks";
 import { Input, Button } from "antd";
 import ToDoList from "../todo-list/todo-list";
 import todoList from "../../redux/todo";
@@ -7,8 +10,8 @@ import todoList from "../../redux/todo";
 export default function ToDoInput() {
   const [input, setInput] = useState("");
   const [display, setDisplay] = useState(false);
-  const state = useSelector((state) => state);
-  const dispatch = useDispatch();
+  const state = useComponentSelector((state) => state);
+  const dispatch = useComponentDispatch();
 
   const handleInput = (e) => {
     setInput(e.target.value);
